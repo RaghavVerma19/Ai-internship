@@ -1,0 +1,5 @@
+{
+  "name": "InternAI: AI Internship Finder",
+  "description": "An AI-powered platform that matches candidates with internships across all fields based on their skills, interests, and preferences. It features resume parsing, personalized rankings, and a comprehensive admin dashboard.",
+  "requestFramePermissions": []
+}

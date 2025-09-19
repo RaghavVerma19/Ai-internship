@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InternAI: AI Internship Finder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Prevents dark mode flashing
+      (function() {
+        if (
+          localStorage.getItem('theme') === 'dark' ||
+          (!('theme' in localStorage) &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'primary': '#1a73e8',
+              'primary-hover': '#1867cf',
+              'background': '#f8f9fa',
+              'surface': '#ffffff',
+              'on-surface': '#202124',
+              'on-surface-secondary': '#5f6368',
+              'border': '#e0e0e0',
+              // Dark theme colors
+              'dark-primary': '#8ab4f8',
+              'dark-primary-hover': '#9ac0f9',
+              'dark-background': '#121212',
+              'dark-surface': '#1e1e1e',
+              'dark-on-surface': '#e8eaed',
+              'dark-on-surface-secondary': '#969ba1',
+              'dark-border': '#3c4043',
+            },
+            fontFamily: {
+                sans: ['"Google Sans"', 'sans-serif', 'system-ui']
+            }
+          },
+        },
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.20.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.2.1",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.544.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
