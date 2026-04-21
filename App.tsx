@@ -86,6 +86,4 @@ const App: React.FC = () => {
 };
 
 export default App;
-
-// Add new file content here for simplicity since we can't add new files
 export const locales = {};
