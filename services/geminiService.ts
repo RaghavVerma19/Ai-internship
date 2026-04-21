@@ -2,8 +2,7 @@ import { GoogleGenAI, Type } from "@google/genai";
 import type { CandidateProfile, Internship, Preferences, RankedInternship, ProfileAnalysis, QuizQuestion } from '../types';
 
 if (!process.env.API_KEY) {
-  // In a real app, you'd want to handle this more gracefully.
-  // For this context, we assume it's set.
+
   console.warn("API_KEY environment variable not set. Gemini API calls will fail.");
 }
 
@@ -82,7 +81,6 @@ export const parseResume = async (input: ParseResumeInput): Promise<CandidatePro
     });
 
     const parsedJson = JSON.parse(response.text);
-    // Add empty fields for data collected in later steps
     return { ...parsedJson, interests: [], aspirations: '', preferredLocation: '' };
   } catch (error) {
     console.error("Error parsing resume:", error);
@@ -135,7 +133,7 @@ export const getRankingsAndAnalysis = async (
             contents: prompt,
             config: {
                 responseMimeType: "application/json",
-                thinkingConfig: { thinkingBudget: 0 }, // Critical for speed optimization
+                thinkingConfig: { thinkingBudget: 0 }, 
                 responseSchema: {
                     type: Type.OBJECT,
                     properties: {
